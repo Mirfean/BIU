@@ -17,7 +17,7 @@
             <button class="button" (click)="unlike(weapon)">It sucks! {{weapon.like}}</button>
         </div>
     </li>
-    <button class="sort" (click)="onSort()">Most popular weapon</button>
+    <button class="sort" (click)="onSort()">Most popular weapon</button> <br />
 
     <button (click)="showForm()">Add new weapon</button>
     <my-dashboard *ngIf="isForm<0" (addToList)="addWeapon($event)"></my-dashboard>
