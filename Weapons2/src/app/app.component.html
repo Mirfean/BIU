@@ -1,0 +1,26 @@
+<div *ngIf="selectedWeapon">
+    <!--<div><label>id: </label>{{selectedGun.id}}</div>
+    <div><label>like: </label>{{selectedGun.like}}</div>-->
+    <div>
+        <label>Selected weapon: </label>
+        <input [(ngModel)]="selectedWeapon.name" placeholder="weapon name" />
+    </div>
+</div>
+<ul class="weapons">
+    <li *ngFor="let weapon of weapons" [class.selected]="weapon === selectedWeapon" (click)="onSelect(weapon)">
+        <div>
+            <span class="badge">{{weapon.id}}</span>
+            <p>{{weapon.name}}</p>
+        </div>
+        <div *ngIf="selectedWeapon" class="like">
+            <button class="button" (click)="like(weapon)">I like It! {{weapon.like}}</button>
+        </div>
+        <div *ngIf="selectedWeapon" class="unlike">
+            <button class="button" (click)="unlike(weapon)">It sucks! {{weapon.like}}</button>
+        </div>
+    </li>
+    <button class="sort" (click)="onSort()">Most popular weapon</button>
+
+    <button (click)="showForm()">Add new weapon</button>
+    <my-dashboard *ngIf="isForm<0" (addToList)="addWeapon($event)"></my-dashboard>
+</ul>

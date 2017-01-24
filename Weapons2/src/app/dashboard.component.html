@@ -1,0 +1,16 @@
+<div>
+<form [formGroup]="form" (ngSubmit)="addWeapon()">
+      <label>Name of weapon: </label>
+      <input formControlName="name" placeholder="Name" id="name" ><br>
+      <div *ngIf="!form.controls['name'].valid">
+      <div class="error">
+            <strong>Error</strong>
+      </div>
+</div>
+      
+      <button type="submit">Submit</button>
+
+</form>
+</div>
+
+
