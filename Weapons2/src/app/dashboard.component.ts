@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Inject } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Person } from './app.component';
+import { Weapon } from './app.component';
 
 
 
@@ -22,11 +22,11 @@ export class DashboardComponent {
     });
   }
 
-  addPerson():void{
-      //console.log("Works!");
+  addWeapon():void{
+      console.log("Works!");
       if(this.form.dirty && this.form.valid)
       {
-      this.addToList.emit({osoba:this.form.value});  
+      this.addToList.emit({xD:this.form.value});  
       }
    }
 }
